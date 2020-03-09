@@ -1,0 +1,76 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+.box {
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+/* width is gone */
+  flex: 1 0 0; /* first # is grow, second # shrink, thrid # basis */
+}
+
+.box1 {
+  background-color: blue;    
+}
+
+.box2 {
+  background-color: purple;
+}
+
+.box3 {
+  background-color: grey ;
+}
+
+.box4 {
+  background-color: brown;
+}
+/* since there is a set value for box 4 auto is ok since the other boxes will still grow and shrink, 
+but box 4 will remain within 400px, and wrap */
+
+@media screen and (max-width: 641px) {
+
+  .container {
+    margin: 0 auto;
+    background-color: #efefef;
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    flex-wrap: wrap;
+  }
+
+  .box1 {
+    background-color: pink;
+  }
+
+  .box2 {
+    background-color: red;
+  }
+  .box3 {
+    display: none;
+  }
+
+  .box4  { 
+    display: none;
+  }
+
+
+
+}
+
+
+/* 4 items and have set the flex-basis to auto
+given an absolute width to the 4th item, with the width property.
+Flexbox is now using that width as the flex-basis for the 4th item;
+the other three use the content width. */
